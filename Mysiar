@@ -68,6 +68,9 @@ TEXT
 ${font :BOLD}${color orange}${alignc}$sysname $kernel$color
 ${font}${color slate grey}UpTime: ${color}${alignr}$uptime
 ${color orange}${voffset -10}${hr 1}
+${color lightgrey}CPU Usage:${color green} ${cpu}% ${cpubar 20}
+${color green}${cpugraph 40,400 000000 5000a0}
+${color lightgrey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 ${font :BOLD}${color}${color slate grey}Highest CPU:
 ${font}${color #ddaa00} ${top name 1}${alignr}${top cpu 1}
 ${color lightgrey} ${top name 2}${alignr}${top cpu 2}
@@ -88,7 +91,7 @@ ${font}${alignc}${color green} $memperc%  ${mem} / ${memmax}
 ${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}Internet 
 ${font}${color slate grey}Down:${color yellow} ${downspeed wlp3s0}k/s${color slate grey} ${color slate grey}${goto 220}Up:${color red} ${upspeed wlp3s0}k/s
-${color yellow}${downspeedgraph wlp3s0 20,195 000000 ffffff}${goto 215}${color red}${upspeedgraph wlp3s0 20,190 000000 ffffff}
+${color yellow}${downspeedgraph wlp3s0 40,195 000000 ffffff}${goto 215}${color red}${upspeedgraph wlp3s0 40,190 000000 ffffff}
 ${color slate grey}Today: ${color} ${exec vnstat -i wlp3s0 -d | grep `date +%d.%m.%Y`|awk '{print $2 $3}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -d | grep `date +%d.%m.%Y`|awk '{print $5 $6}'}
 ${color slate grey}Week:  ${color} ${exec vnstat -i wlp3s0 -w | grep 'current week'|awk '{print $3 $4}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -w | grep 'current week'|awk '{print $6 $7}'}
 ${color slate grey}Month: ${color} ${exec vnstat -m -i wlp3s0|grep `date | cut -d' ' -f3`|awk '{print $3 $4}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -m | grep `date | cut -d' ' -f3`|awk '{print $6 $7}'}
