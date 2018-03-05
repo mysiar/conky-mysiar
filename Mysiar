@@ -81,10 +81,10 @@ ${color lightgrey} ${top_mem name 3}${alignr}${top_mem mem 3}
 ${color lightgrey} ${top_mem name 4}${alignr}${top_mem mem 4}
 ${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}HD / ${color green}${alignr}${fs_bar 20,300 /}
-${font}${color green} ${alignc}${fs_free /} / ${fs_size /}
+${font}${color green} ${alignc} ${fs_free_perc}%  ${fs_free /} / ${fs_size /}
 #${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}MEM ${color green}${alignr}${membar 20,300}
-${font}${alignc}${color green} $memperc% $mem / $memmax
+${font}${alignc}${color green} $memperc%  ${mem} / ${memmax}
 ${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}Internet 
 ${font}${color slate grey}Down:${color yellow} ${downspeed wlp3s0}k/s${color slate grey} ${color slate grey}${goto 220}Up:${color red} ${upspeed wlp3s0}k/s
