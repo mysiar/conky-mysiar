@@ -69,7 +69,7 @@ ${font :BOLD}${color orange}${alignc}$sysname $kernel$color
 ${font}${color slate grey}UpTime: ${color}${alignr}$uptime
 ${color orange}${voffset -10}${hr 1}
 ${color lightgrey}CPU Usage:${color green} ${cpu}% ${cpubar 20}
-${color green}${cpugraph 40,400 000000 5000a0}
+${color}${cpugraph 40,400 yellow red}
 ${color lightgrey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 ${font :BOLD}${color}${color slate grey}Highest CPU:
 ${font}${color #ddaa00} ${top name 1}${alignr}${top cpu 1}
@@ -84,7 +84,7 @@ ${color lightgrey} ${top_mem name 3}${alignr}${top_mem mem 3}
 ${color lightgrey} ${top_mem name 4}${alignr}${top_mem mem 4}
 ${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}HD / ${color green}${alignr}${fs_bar 20,300 /}
-${font}${color green} ${alignc} ${fs_free_perc}%  ${fs_free /} / ${fs_size /}
+${font}${color green}${alignc} ${fs_used_perc}%  ${fs_free /} / ${fs_size /}
 #${color orange}${voffset -10}${hr 1}
 ${font :BOLD}${color slate grey}MEM ${color green}${alignr}${membar 20,300}
 ${font}${alignc}${color green} $memperc%  ${mem} / ${memmax}
