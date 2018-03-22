@@ -95,7 +95,7 @@ ${color yellow}${downspeedgraph wlp3s0 40,195 000000 ffffff}${goto 215}${color r
 ${color slate grey}Today: ${color} ${exec vnstat -i wlp3s0 -d | grep `date +%d.%m.%Y`|awk '{print $2 $3}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -d | grep `date +%d.%m.%Y`|awk '{print $5 $6}'}
 ${color slate grey}Week:  ${color} ${exec vnstat -i wlp3s0 -w | grep 'current week'|awk '{print $3 $4}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -w | grep 'current week'|awk '{print $6 $7}'}
 ${color slate grey}Month: ${color} ${exec vnstat -m -i wlp3s0|grep `date | cut -d' ' -f3`|awk '{print $3 $4}'}${goto 250}$alignr${exec vnstat -i wlp3s0 -m | grep `date | cut -d' ' -f3`|awk '{print $6 $7}'}
-Total: ${color green}${totaldown wlp3s0} $color${alignr}Total: ${color red}${totalup wlp3s0}
+Total: ${color green}${exec vnstat -i wlp3s0 | grep 'rx:' | awk '{print $2 $3}'} $color${alignr}Total: ${color red}${exec vnstat -i wlp3s0 | grep 'rx:' | awk '{print $5 $6}'}
 ${color orange}${voffset -10}${hr 1}
 ${color slate grey}IP (wlp3s0):${color orange}${alignr}${addr wlp3s0}
 ${color slate grey}SSID: ${color orange}${alignr}${wireless_essid wlp3s0}
